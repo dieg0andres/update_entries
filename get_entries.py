@@ -180,7 +180,7 @@ def get_new_entries(existing_pods):
                     date_from_feed = (date_from_feed.tm_year, date_from_feed.tm_mon, date_from_feed.tm_mday)
 
                     # Stop collecting entries once we reach an entry that matches or predates the last known entry
-                    if last_date_from_db > date_from_feed or last_entry['_id'] == entry['id']:
+                    if last_date_from_db >= date_from_feed or last_entry['_id'] == entry['id']:
                         break
 
                     # Add new entry to the list
